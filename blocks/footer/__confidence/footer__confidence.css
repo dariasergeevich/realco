@@ -1,0 +1,15 @@
+.footer__confidence {
+   width: 290px;
+   font-size: 11px;
+   line-height: 18px;
+   font-weight: 400;
+   color: #65665C;
+   margin: 0;
+   padding-top: 16px;
+  }
+
+  @media (max-width: 768px) { 
+   .footer__confidence {
+      width: 270px;
+   }
+  }

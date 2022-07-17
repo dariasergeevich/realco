@@ -1,0 +1,21 @@
+.property {
+    display: flex;
+    flex-direction: column;
+    border-radius: 0 0 12px 12px;
+    width: 350px;
+    height: 440px;
+    background-color: white;
+    cursor: pointer;
+    justify-content: space-between;
+}
+
+.property:hover {
+    box-shadow: 5px 5px 5px 3px rgba(0, 0, 0, 0.2);
+}
+
+@media (max-width: 768px) {
+    .property {
+        width: 290px;
+        height: 390px
+    }
+}

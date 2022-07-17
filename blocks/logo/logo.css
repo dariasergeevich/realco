@@ -1,0 +1,14 @@
+.logo {
+    width: 32px;
+    height: 32px;
+    margin-left: 80px;
+    background-image: url(../../images/logo\ figure.png);
+    background-size: contain;
+    background-repeat: no-repeat;
+  }
+
+  @media (max-width: 768px) {
+    .logo {
+      margin-left: 20px;
+    }
+  }

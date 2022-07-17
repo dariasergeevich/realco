@@ -1,0 +1,9 @@
+.card__subtitle {
+   font-size: 16px;
+   font-weight: 400;
+   line-height: 24px;
+   margin: 0;
+   color: #65665C;
+   max-width: 320px;
+   text-align: center;
+  }

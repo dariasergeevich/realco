@@ -1,0 +1,16 @@
+.property__location-img {
+    background-image: url(../../../images/place.png);
+    width: 14px;
+    height: 20px;
+    background-repeat: no-repeat;
+    background-size: contain;
+    border: none;
+    margin-right: 10px;
+}
+
+@media (max-width: 768px) {
+    .property__location-img {
+        width: 10px;
+        height: 16px;
+    }
+}

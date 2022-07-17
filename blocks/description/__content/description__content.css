@@ -1,0 +1,12 @@
+.description__content {
+   display: flex;
+   flex-direction: column;
+   margin-left: 80px;
+   justify-content: center;
+  }
+
+  @media (max-width: 768px) {
+   .description__content {
+      margin-left: 20px;
+   }
+  }

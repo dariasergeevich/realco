@@ -1,0 +1,12 @@
+.description__text-background {
+   background-color: #E7E8E3;
+   border-radius: 32px;
+   width: 170px;
+   
+  }
+
+  @media (max-width: 768px) {
+   .description__text-background {
+      margin-top: 20px;
+   }
+  }

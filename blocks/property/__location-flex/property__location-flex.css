@@ -1,0 +1,13 @@
+.property__location-flex {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin-left: 26px;
+    margin-bottom: 25px;
+}
+
+@media (max-width: 768px) {
+    .property__location-flex {
+        margin-bottom: 13px; 
+    }
+}

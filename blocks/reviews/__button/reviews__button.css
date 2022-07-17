@@ -1,0 +1,18 @@
+.reviews__button {
+  background-color: #CF6F49;
+    color: white;
+    border: none;
+    width: 160px;
+    height: 42px;
+    border-radius: 6px;
+    cursor: pointer;
+    margin-top:30px;
+    margin-bottom: 50px;
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+}
+
+.reviews__button:hover {
+  opacity: .7;
+}

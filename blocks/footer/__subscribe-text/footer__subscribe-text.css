@@ -1,0 +1,16 @@
+.footer__subscribe-text {
+  font-size: 16px;
+  line-height: 24px;
+  font-weight: 400;
+  color: #65665C;
+  width: 320px;
+  padding-top: 10px;
+  padding-bottom: 15px;
+  margin: 0;
+  }
+
+  @media (max-width: 768px) {
+    .footer__subscribe-text {
+      width: 280px;
+    }
+  }

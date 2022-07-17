@@ -1,0 +1,9 @@
+.property__image {
+    width: 350px;
+}
+
+@media (max-width: 768px) {
+    .property__image {
+        width: 290px;
+    }
+}

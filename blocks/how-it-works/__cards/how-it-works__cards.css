@@ -1,0 +1,14 @@
+.how-it-works__cards {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    margin-bottom: 90px;
+    align-self: center;
+  }
+
+  @media (max-width: 1024px) {
+    .how-it-works__cards {
+      grid-template-columns: 1fr;
+      grid-template-rows: repeat(3, 1fr);
+    } 
+  }

@@ -1,0 +1,23 @@
+.reviews__title {
+   text-align: center;
+   margin: 0;
+   font-size: 48px;
+   font-weight: 700;
+   line-height: 58px;
+   padding-bottom: 25px;
+   margin-top: 250px;
+   
+}
+
+@media (max-width: 768px) {
+   .reviews__title {
+     font-size: 40px;
+   line-height: 48px;
+   }
+ }
+
+ @media (max-width: 425px) {
+  .reviews__title {
+    margin-top: 200px;
+  }
+}

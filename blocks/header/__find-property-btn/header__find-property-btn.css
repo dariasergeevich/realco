@@ -1,0 +1,21 @@
+.header__find-property-btn {
+    background-color: #CF6F49;
+    color: white;
+    border: none;
+    width: 160px;
+    height: 42px;
+    border-radius: 6px;
+    margin-left: 32px;
+    margin-right: 80px;
+    cursor: pointer;
+  }
+
+  .header__find-property-btn:hover {
+    opacity: .7;
+  }
+
+  @media (max-width: 768px) {
+    .header__find-property-btn {
+      margin-top: 15px;
+    }
+  }

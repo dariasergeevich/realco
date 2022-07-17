@@ -1,0 +1,15 @@
+.review {
+  display: flex;
+  flex-direction: column;
+  width: 320px;
+  height: 325px;
+  border-radius: 16px;
+  border: 1px solid #E7E8E3;
+  justify-content: space-around;
+}
+
+@media (max-width: 425px) {
+  .review {
+    width: 290px;
+  }
+}

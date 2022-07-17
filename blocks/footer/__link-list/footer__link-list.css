@@ -1,0 +1,8 @@
+.footer__link-list {
+   display: flex;
+   flex-direction: column;
+   list-style: none;
+   margin-top: 77px;
+   padding-inline-start: 0px;
+   width: 100px;
+  }

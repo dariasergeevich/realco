@@ -1,0 +1,4 @@
+.review__info-col {
+  display: flex;
+  flex-direction: column;
+}

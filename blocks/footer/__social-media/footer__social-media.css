@@ -1,0 +1,8 @@
+.footer__social-media {
+   display: flex;
+   flex-direction: row;
+  list-style: none;
+  margin: 0;
+  padding-top: 30px;
+  padding-inline-start: 0px;
+  }

@@ -1,0 +1,16 @@
+.card {
+   border: solid 1px #E7E8E3;
+   border-radius: 16px;
+   width: 310px;
+   height: 250px;
+   display: flex;
+   flex-direction: column;
+   justify-content: center;
+  }
+
+  @media (max-width: 425px) {
+   .card {
+   width: 280px;
+   height: 220px;
+   }
+  }

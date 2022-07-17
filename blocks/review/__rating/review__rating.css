@@ -1,0 +1,8 @@
+.review__rating {
+  display: flex;
+  flex-direction: row;
+  margin-left: 15px;
+  margin-top: 10px;
+ 
+  width: 120px;
+}

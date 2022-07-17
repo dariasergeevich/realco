@@ -1,0 +1,10 @@
+.logo_footer {
+    margin-left: 50px;
+  }
+
+  
+  @media (max-width: 768px) {
+    .logo_footer {
+      margin-left: 10px;
+    }
+  }

@@ -1,0 +1,28 @@
+.description__image {
+   width: 640px;
+   height: 610px;
+   align-self: center;
+  }
+
+  @media (max-width: 1200px) {
+   .description__image {
+      width: 440px;
+      height: 410px;
+      padding-left: 20px;
+   }
+  }
+
+  @media (max-width: 768px) {
+   .description__image {
+      align-self: flex-start;
+   }
+  }
+
+  @media (max-width: 470px) {
+   .description__image {
+      width: 280px;
+      height: 260px;
+      padding-left: 0;
+      align-self: center;
+   }
+  }

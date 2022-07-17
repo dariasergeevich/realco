@@ -1,0 +1,17 @@
+.how-it-works__subtitle {
+    font-size: 18px;
+    font-weight: 400;
+    line-height: 27px;
+    text-align: center;
+    padding-top: 21px;
+    padding-bottom: 61px;
+    margin: 0;
+    color: #65665C;
+  }
+
+  @media (max-width: 768px) {
+    .how-it-works__subtitle {
+       max-width: 280px;
+       margin: auto;
+    }
+   }

@@ -1,0 +1,22 @@
+.footer__subscribe {
+   display: flex;
+   flex-direction: column;
+   margin-top: 77px;
+   margin-right: 50px;
+  }
+
+  @media (max-width: 1024px) {
+   .footer__subscribe {
+      margin-top: 0px; 
+      margin-left: 50px;
+      margin-right: auto;
+   }
+  }
+
+  
+  @media (max-width: 768px) {
+   .footer__subscribe {
+      margin-left: 10px;
+      width: 270px;
+   }
+  }

@@ -1,0 +1,8 @@
+.logo__text {
+    width: 62.5px;
+    height: 15px;
+    margin-left: 9.4px;
+    background-image: url(../../../images/logo\ text.png);
+    background-size: contain;
+    background-repeat: no-repeat;
+  }

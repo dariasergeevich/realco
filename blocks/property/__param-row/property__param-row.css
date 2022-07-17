@@ -1,0 +1,6 @@
+.property__param-row {
+    display: flex;
+    flex-direction: row;
+    margin-left: 26px;
+    align-items: center;
+}
