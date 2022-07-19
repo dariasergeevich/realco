@@ -1,0 +1,14 @@
+.popup__slider {
+display: flex;
+flex-direction: row;
+justify-content: space-between;
+align-items: center;
+margin-left: 20px;
+  }
+
+  @media (max-width: 900px) {
+    .popup__slider {
+      margin-left: 0;
+      align-self: center;
+      justify-content: space-around;
+  }}

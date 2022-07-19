@@ -9,5 +9,6 @@
 @media (max-width: 768px) {
     .property__location-flex {
         margin-bottom: 13px; 
+        margin-left: 15px;
     }
 }

@@ -6,3 +6,9 @@
     margin-bottom: 16px;
     margin-left: 24px;
 }
+
+@media (max-width: 768px) {
+    .property__price {
+        margin-left: 15px;
+    }
+}

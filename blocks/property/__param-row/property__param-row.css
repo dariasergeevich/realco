@@ -4,3 +4,9 @@
     margin-left: 26px;
     align-items: center;
 }
+
+@media (max-width: 768px) {
+    .property__param-row {
+        margin-left: 15px;
+    }
+}

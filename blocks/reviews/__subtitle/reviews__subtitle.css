@@ -6,11 +6,12 @@
    line-height: 27px;
    padding-bottom: 80px;
    color: #65665C;
+   max-width: 800px;
+   margin: auto;
 }
 
 @media (max-width: 768px) {
    .reviews__subtitle {
       max-width: calc(100% - 30px);
-      margin: auto;
    }
 }

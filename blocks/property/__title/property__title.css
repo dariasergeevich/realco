@@ -6,3 +6,9 @@
     margin-top: 23px;
     margin-bottom: 3px;
 }
+
+@media (max-width: 768px) {
+    .property__title {
+        margin-left: 15px;
+    }
+}

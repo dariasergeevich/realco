@@ -1,0 +1,14 @@
+.popup__location {
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 1.2;
+  margin: 0;
+  padding-bottom: 15px;
+  color: gray;
+  }
+
+  @media (max-width: 900px) {
+    .popup__location {
+      font-size: 14px;
+      padding-bottom: 8px;
+  }}

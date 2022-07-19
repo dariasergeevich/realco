@@ -1,0 +1,9 @@
+.popup__slide-btn_left {
+ background-image: url(../../../../images/button_left.png);
+ margin-right: 10px;
+  }
+
+  @media (max-width: 900px) {
+    .popup__slide-btn_left {
+        margin-right: 5px;
+  }}

@@ -1,0 +1,9 @@
+.popup__column_info {
+max-width: 30%;
+margin-left: 20px;
+  }
+
+  @media (max-width: 900px) {
+    .popup__column_info {
+      max-width: 80%;
+  }}

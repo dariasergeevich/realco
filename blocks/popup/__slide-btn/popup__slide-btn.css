@@ -1,0 +1,10 @@
+.popup__slide-btn {
+ background-image: url(../../../images/button_left.png);
+ width: 20px;
+ height: 20px;
+ background-size: contain;
+ border: none;
+ background-color: rgba(255, 255,255,.01);
+ cursor: pointer;
+ background-repeat: no-repeat;
+  }
