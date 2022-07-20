@@ -59,6 +59,7 @@
 @import url(../blocks/reviews/__grid/reviews__grid.css);
 @import url(../blocks/review/review.css);
 @import url(../blocks/review/__rating/review__rating.css);
+@import url(../blocks/review/__rating/_popup/review__rating_popup.css);
 @import url(../blocks/review/__star/review__star.css);
 @import url(../blocks/review/__text/review__text.css);
 @import url(../blocks/review/__info/review__info.css);
@@ -88,6 +89,7 @@
 @import url(../blocks/popup/popup.css);
 @import url(../blocks/popup/_opend/popup_opend.css);
 @import url(../blocks/popup/__container/popup__container.css);
+@import url(../blocks/popup/__container/_review/popup__container_review.css);
 @import url(../blocks/popup/__close-btn/popup__close-btn.css);
 @import url(../blocks/popup/__column/popup__column.css);
 @import url(../blocks/popup/__column/_info/popup__column_info.css);
@@ -97,7 +99,16 @@
 @import url(../blocks/popup/__slide-btn/_right/popup__slide-btn_right.css);
 @import url(../blocks/popup/__image/popup__image.css);
 @import url(../blocks/popup/__title/popup__title.css);
+@import url(../blocks/popup/__title/_review/popup__title_review.css);
+@import url(../blocks/popup/__rating/popup__rating.css);
 @import url(../blocks/popup/__price/popup__price.css);
 @import url(../blocks/popup/__location/popup__location.css);
 @import url(../blocks/popup/__text/popup__text.css);
+@import url(../blocks/popup/__text/_review/popup__text_review.css);
 @import url(../blocks/popup/__span/popup__span.css);
+@import url(../blocks/popup/__row/popup__row.css);
+@import url(../blocks/popup/__input/popup__input.css);
+@import url(../blocks/popup/__radio/popup__radio.css);
+@import url(../blocks/popup/__textarea/popup__textarea.css);
+@import url(../blocks/popup/__name/popup__name.css);
+@import url(../blocks/popup/__submit-btn/popup__submit-btn.css);

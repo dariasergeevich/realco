@@ -3,7 +3,6 @@ const cardPropertyTemplate = document.querySelector('#property-template');
 const propertyContainer = document.querySelector('.properties__grid');
 const cardReviewTemplate = document.querySelector('#review-template');
 const  reviewContainer = document.querySelector('.reviews__grid');
-const popup = document.querySelector('.popup');
 const popupProperty = document.querySelector('#popup_property');
 const buttonClosePopup = document.querySelector('.popup__close-btn');
 
@@ -17,6 +16,13 @@ const popupPropertyOwner = popupProperty.querySelector('#popup_owner');
 const popupPropertyNumber = popupProperty.querySelector('#popup_number');
 const popupSpanOwner = popupProperty.querySelector('#span_owner');
 const popupSpanNumber = popupProperty.querySelector('#span_number');
+const buttonLeftSlider = document.querySelector('.popup__slide-btn_left');
+const buttonRightSlider = document.querySelector('.popup__slide-btn_right');
+
+//константы для попапа для добавления отзыва
+const popupReview = document.querySelector('#popup_review');
+const buttonLeaveReview = document.querySelector('.reviews__button');
+const buttonClosePopupReview = document.querySelector('#popup_review_close_btn');
 
 //универсальные функции открытия и закрытия попапов
 function openPopup (popup) {
@@ -27,12 +33,22 @@ function closePopup(popup) {
   popup.classList.remove('popup_opend');
 };
 
+//открытие и закрытие попапа для отзыва
+buttonLeaveReview.addEventListener('click', function () {
+  openPopup(popupReview);
+});
+
+buttonClosePopupReview.addEventListener('click', function () {
+  closePopup(popupReview);
+});
 
 //массив с данными для карточки с недвижимостью
 
 const propertyCards = [
   {
     image: './images/IMAGE (1).png',
+    kitchen: './images/KITCHEN (1).jpeg',
+    bath: './images/BATH (1).jpeg',
     title: 'Уютная студия в Москве',
     price: '12 000 000' + ' руб.',
     address: 'Москва, ул.Грайвороновская, д.10',
@@ -45,6 +61,8 @@ const propertyCards = [
   },
   {
     image: './images/IMAGE (2).png',
+    kitchen: './images/KITCHEN (2).jpeg',
+    bath: './images/BATH (2).jpeg',
     title: 'Двухкомнатная квартира в Екатеринбурге',
     price: '9 800 000' + ' руб.',
     address: 'Екатеринбург, ул.8 Марта, д.66',
@@ -57,6 +75,8 @@ const propertyCards = [
   },
   {
     image: './images/IMAGE (3).png',
+    kitchen: './images/KITCHEN (3).jpeg',
+    bath: './images/BATH (3).jpeg',
     title: 'Однокомнатная квартира в Санкт-Петербурге',
     price: '15 200 000.' + ' руб.',
     address: 'Санкт-Петербург, ул.Садовая, д.3',
@@ -69,6 +89,8 @@ const propertyCards = [
   },
   {
     image: './images/IMAGE (4).png',
+    kitchen: './images/KITCHEN (4).jpeg',
+    bath: './images/BATH (4).jpeg',
     title: 'Светлая студия в центре Москвы',
     price: '30 500 000' + ' руб.',
     address: 'Москва, ул.Спортивная, д.75',
@@ -81,6 +103,8 @@ const propertyCards = [
   },
   {
     image: './images/IMAGE (5).png',
+    kitchen: './images/KITCHEN (5).jpeg',
+    bath: './images/BATH (5).jpeg',
     title: 'Просторная 4-х комнатная квартира в Воронеже',
     price: '18 600 000' + ' руб.',
     address: 'Воронеж, ул.Карла Маркса, д.34',
@@ -93,6 +117,8 @@ const propertyCards = [
   },
   {
     image: './images/IMAGE (6).png',
+    kitchen: './images/KITCHEN (3).jpeg',
+    bath: './images/BATH (6).jpeg',
     title: 'Комфортные апартаменты в Зеленограде',
     price: '7 300 000 ' + ' руб.',
     address: 'Зеленоград, ул.Каштановая аллея, д.108',
@@ -107,7 +133,7 @@ const propertyCards = [
 
 
 //создание разметки карточки для добавления из массива
-const createPropertyCard = (image, title, price, address, bathCount, bedroomCount, space, text, owner, number) => {
+const createPropertyCard = (image, title, price, address, bathCount, bedroomCount, space, text, owner, number,kitchen,bath) => {
   const newPropertyCard = cardPropertyTemplate.content.querySelector('.property').cloneNode('true');
   const newPropertyCardImage =  newPropertyCard.querySelector('.property__image');
   const newPropertyCardTitle = newPropertyCard.querySelector('.property__title');
@@ -151,13 +177,13 @@ buttonClosePopup.addEventListener('click', function () {
 }
 
 //добавление карточки на страницу
-const renderPropertyCard = (image, title, price, address, bathCount, bedroomCount, space, text, owner, number) => {
-  propertyContainer.append(createPropertyCard(image, title, price, address, bathCount, bedroomCount, space, text, owner, number))
+const renderPropertyCard = (image, title, price, address, bathCount, bedroomCount, space, text, owner, number,kitchen, bath) => {
+  propertyContainer.append(createPropertyCard(image, title, price, address, bathCount, bedroomCount, space, text, owner, number,kitchen,bath))
 };
 
 //перебор с функцией добавления карточек из массива на страницу
 propertyCards.forEach(function (property) {
-  renderPropertyCard(property.image, property.title, property.price, property.address, property.bathCount, property.bedroomCount, property.space, property.text, property.owner, property.number);
+  renderPropertyCard(property.image, property.title, property.price, property.address, property.bathCount, property.bedroomCount, property.space, property.text, property.owner, property.number, property.kitchen, property.bath);
 });
 
 //массив с данными для карточки с отзывом

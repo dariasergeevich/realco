@@ -1,0 +1,14 @@
+.popup__radio {
+font-weight: 400;
+font-size: 14px;
+line-height: 1.2;
+margin: 0;
+padding-left: 7px;
+padding-right: 10px;
+  }
+
+  @media (max-width: 900px) {
+    .popup__radio {
+      font-size: 12px;
+      padding-left: 8px;
+  }}

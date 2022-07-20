@@ -1,0 +1,14 @@
+.popup__row {
+  z-index: 0;
+ display: flex;
+ flex-direction: row;
+ align-items: center;
+ padding-bottom: 20px;
+ margin-left: 20px;
+  }
+
+  @media (max-width: 425px) {
+    .popup__row   {
+      margin-left: 0px;
+      justify-content: center;
+  }}

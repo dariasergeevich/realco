@@ -1,0 +1,16 @@
+.popup__submit-btn {
+    background-color: #CF6F49;
+    color: white;
+    border: none;
+    width: 160px;
+    height: 42px;
+    border-radius: 6px;
+    cursor: pointer;
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+}
+
+.popup__submit-btn:hover {
+    opacity: .7;
+}

@@ -1,0 +1,13 @@
+.popup__rating {
+display: flex;
+flex-direction: row;
+align-items: center;
+margin-bottom: 20px;
+margin-left: 20px;
+  }
+
+  @media (max-width: 425px) {
+    .popup__rating   {
+      justify-content: center;
+      margin-left: 0px;
+  }}

@@ -177,7 +177,37 @@
 </div>
       </div>
     </div>
+
+    <div class="popup" id="popup_review">
+      <div class="popup__container popup__container_review">
+        <div class="popup__rating">
+          <h3 class="popup__title popup__title_review">Оценка: </h3>
+          <div class="review__rating review__rating_popup">
+            <div class="review__star"></div>
+            <div class="review__star"></div>
+            <div class="review__star"></div>
+            <div class="review__star"></div>
+            <div class="review__star"></div>
+          </div>
+        </div>
+        <div class="popup__row">
+        <p class="popup__name">Имя: </p>
+        <input class="popup__input">
+      </div>
+      <div class="popup__row popup__row_radio">
+      <input type="radio" id="radio_customer" name="radio" value="Заказчик">
+      <label class='popup__radio' for="customer">Заказчик</label>
+      <input type="radio" id="radio_owner" name="radio" value="Собственник">
+      <label class='popup__radio' for="owner">Собственник</label>
+      </div>
+<p class="popup__text popup__text_review">Напишите отзыв о нашем сервисе:</p>
+<textarea class="popup__textarea"></textarea>
+<button class="popup__submit-btn">Отправить</button>
+        <button class="popup__close-btn" id="popup_review_close_btn"></button>
+    </div>
+
   </div>
+
 
   <template id="property-template">
     <div class="property">

@@ -1,0 +1,9 @@
+.popup__textarea {
+height: 150px;
+width: 90%;
+margin-left: auto;
+margin-right: auto;
+margin-bottom: 20px;
+border: 1px solid #CF6F49;
+border-radius: 5px;
+}

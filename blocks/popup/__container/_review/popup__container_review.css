@@ -1,0 +1,16 @@
+.popup__container_review {
+ flex-direction: column;
+ width: 40%;
+ height: 430px;
+  }
+
+  @media (max-width: 768px) {
+    .popup__container_review  {
+        width: 60%;
+        justify-content: center;
+  }}
+
+  @media (max-width: 425px) {
+    .popup__container_review  {
+        width: 80%;
+  }}
