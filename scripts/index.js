@@ -1,3 +1,4 @@
+//констранты для карточек с недвижимостью
 const cardPropertyTemplate = document.querySelector('#property-template');
 const propertyContainer = document.querySelector('.properties__grid');
 const cardReviewTemplate = document.querySelector('#review-template');
@@ -5,6 +6,17 @@ const  reviewContainer = document.querySelector('.reviews__grid');
 const popup = document.querySelector('.popup');
 const popupProperty = document.querySelector('#popup_property');
 const buttonClosePopup = document.querySelector('.popup__close-btn');
+
+//константы для попапа с увеличенной картинкой
+const popupPropertyImage = popupProperty.querySelector('.popup__image');
+const popupPropertyTitle = popupProperty.querySelector('.popup__title');
+const popupPropertyPrice = popupProperty.querySelector('.popup__price');
+const popupPropertyLocation = popupProperty.querySelector('.popup__location');
+const popupPropertyText = popupProperty.querySelector('#popup_text');
+const popupPropertyOwner = popupProperty.querySelector('#popup_owner');
+const popupPropertyNumber = popupProperty.querySelector('#popup_number');
+const popupSpanOwner = popupProperty.querySelector('#span_owner');
+const popupSpanNumber = popupProperty.querySelector('#span_number');
 
 //универсальные функции открытия и закрытия попапов
 function openPopup (popup) {
@@ -26,7 +38,10 @@ const propertyCards = [
     address: 'Москва, ул.Грайвороновская, д.10',
     bathCount: '1',
     bedroomCount: '1',
-    space: '40' + ' кв.м'
+    space: '40' + ' кв.м',
+    text: 'Светлая студия со свежим ремонтом в 7-ми минутах от метро "Текстильщики". Во дворе частная парковка, в пешей доступности два супермаркета ("Перекресток" и "Пятерочка"). Недалеко находится аллея и зона выгула собак. Буду рада рассказать подробности при личном общении!',
+    owner: 'Дёмина Анастасия',
+    number: '8-962-999-30-12'
   },
   {
     image: './images/IMAGE (2).png',
@@ -35,7 +50,10 @@ const propertyCards = [
     address: 'Екатеринбург, ул.8 Марта, д.66',
     bathCount: '2',
     bedroomCount: '1',
-    space: '73' + ' кв.м'
+    space: '73' + ' кв.м',
+    text: 'Просторная двухкомнатная квартира в Ленинском районе вблизи ТЦ "Гринвич" с минималистичным ремонтом в светлых тонах. Имеется два санузла (санузел + ванная и санузел + душевая). Также есть утепленная лоджия с видом на ул. 8 Марта.',
+    owner: 'Савельев Олег',
+    number: '8-916-233-14-01'
   },
   {
     image: './images/IMAGE (3).png',
@@ -44,7 +62,10 @@ const propertyCards = [
     address: 'Санкт-Петербург, ул.Садовая, д.3',
     bathCount: '1',
     bedroomCount: '1',
-    space: '53' + ' кв.м'
+    space: '53' + ' кв.м',
+    text: 'Однокомнатная квартира в центре Санкт-Петербурга. Просторная кухня со всей необходимой техникой, разделенный санузел, в спальне имеется кондиционер. Окна выходят на тихую улицу.',
+    owner: 'Антонов Михаил',
+    number: '8-903-136-90-69'
   },
   {
     image: './images/IMAGE (4).png',
@@ -53,7 +74,10 @@ const propertyCards = [
     address: 'Москва, ул.Спортивная, д.75',
     bathCount: '1',
     bedroomCount: '1',
-    space: '45' + ' кв.м'
+    space: '45' + ' кв.м',
+    text: 'Студия в самом центре Москвы (5 минут до м. Курская). Близость ТЦ "Атриум", Курского вокзала. Студия просторная, санузел совмещенный, имеется джакузи. Балкон утеплен. Входная дверь оборудована кодовым замком. 6 этаж из 10.',
+    owner: 'Осипова Анна',
+    number: '8-916-866-55-34'
   },
   {
     image: './images/IMAGE (5).png',
@@ -62,7 +86,10 @@ const propertyCards = [
     address: 'Воронеж, ул.Карла Маркса, д.34',
     bathCount: '2',
     bedroomCount: '4',
-    space: '98 кв.м'
+    space: '98 кв.м',
+    text: 'Идеальный вариант для многодетной семьи. До ближайшей школы 7 минут пешком, детский сад во дворе. Планировка предусматривает отдельные комнаты, проходных помещений нет. Имеется два санузла, в большом установлено джакузи. Частная парковка.',
+    owner: 'Кучербаева Татьяна',
+    number: '8-985-677-43-34'
   },
   {
     image: './images/IMAGE (6).png',
@@ -71,13 +98,16 @@ const propertyCards = [
     address: 'Зеленоград, ул.Каштановая аллея, д.108',
     bathCount: '1',
     bedroomCount: '1',
-    space: '44' + ' кв.м'
+    space: '44' + ' кв.м',
+    text: 'Апартаменты в центре Зеленограда в новострое. Дом расположен в зеленом районе, поблизости главный городской парк. Свежий ремонт, вся необходимая бытовая техника, новая мебель. В доме имеется консьерж, домофон с видеокамерой.',
+    owner: 'Савченко Дмитрий',
+    number: '8-916-533-23-65'
   },
 ];
 
 
 //создание разметки карточки для добавления из массива
-const createPropertyCard = (image, title, price, address, bathCount, bedroomCount, space) => {
+const createPropertyCard = (image, title, price, address, bathCount, bedroomCount, space, text, owner, number) => {
   const newPropertyCard = cardPropertyTemplate.content.querySelector('.property').cloneNode('true');
   const newPropertyCardImage =  newPropertyCard.querySelector('.property__image');
   const newPropertyCardTitle = newPropertyCard.querySelector('.property__title');
@@ -98,9 +128,16 @@ const createPropertyCard = (image, title, price, address, bathCount, bedroomCoun
 
   //открытие попапа карточки с недвижимостью
   newPropertyCard.addEventListener('click', function () {
-    /*newPopupImagePic.setAttribute('src', image);
-    newPopupImagePic.setAttribute('alt', name);
-    newPopupTitle.textContent = name;*/
+    popupPropertyImage.setAttribute('src', image);
+    popupPropertyImage.setAttribute('alt', title);
+    popupPropertyTitle.textContent = title;
+    popupPropertyPrice.textContent = price;
+    popupPropertyLocation.textContent = address;
+    popupPropertyText.textContent = text;
+    popupPropertyOwner.textContent = owner;
+    popupPropertyNumber.textContent = number;
+    popupPropertyOwner.insertAdjacentHTML('afterbegin', "<span class='popup__span'>Имя собственника: </span>");
+    popupPropertyNumber.insertAdjacentHTML('afterbegin', "<span class='popup__span'>Номер телефона: </span>");
     openPopup(popupProperty);
   });
 
@@ -114,13 +151,13 @@ buttonClosePopup.addEventListener('click', function () {
 }
 
 //добавление карточки на страницу
-const renderPropertyCard = (image, title, price, address, bathCount, bedroomCount, space) => {
-  propertyContainer.append(createPropertyCard(image, title, price, address, bathCount, bedroomCount, space))
+const renderPropertyCard = (image, title, price, address, bathCount, bedroomCount, space, text, owner, number) => {
+  propertyContainer.append(createPropertyCard(image, title, price, address, bathCount, bedroomCount, space, text, owner, number))
 };
 
 //перебор с функцией добавления карточек из массива на страницу
 propertyCards.forEach(function (property) {
-  renderPropertyCard(property.image, property.title, property.price, property.address, property.bathCount, property.bedroomCount, property.space);
+  renderPropertyCard(property.image, property.title, property.price, property.address, property.bathCount, property.bedroomCount, property.space, property.text, property.owner, property.number);
 });
 
 //массив с данными для карточки с отзывом
