@@ -1,7 +1,7 @@
 .popup__container_review {
  flex-direction: column;
  width: 40%;
- height: 430px;
+ height: 470px;
   }
 
   @media (max-width: 768px) {
@@ -10,7 +10,7 @@
         justify-content: center;
   }}
 
-  @media (max-width: 425px) {
+  @media (max-width: 500px) {
     .popup__container_review  {
-        width: 80%;
+        width: 90%;
   }}

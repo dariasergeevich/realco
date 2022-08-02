@@ -1,0 +1,20 @@
+.input_text-error {
+ font-size: 12px;
+ line-height: 15px;
+position: absolute;
+top: 365px;
+left: 20px;
+width: 100%;
+  }
+
+  @media (max-width: 1024px) {
+    .input_text-error {
+      width: 80%;
+  }}
+
+  @media (max-width: 425px) {
+    .input_text-error {
+      font-size: 10px;
+ line-height: 12px;
+ top: 360px;
+  }}

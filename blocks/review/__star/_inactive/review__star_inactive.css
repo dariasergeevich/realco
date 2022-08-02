@@ -1,0 +1,4 @@
+.review__star_inactive {
+  background-image: url(../../../../images/star__inactive.png);
+  cursor: pointer;
+}

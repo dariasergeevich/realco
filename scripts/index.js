@@ -1,3 +1,5 @@
+import {object, FormValidator} from './validation.js';
+
 //констранты для карточек с недвижимостью
 const cardPropertyTemplate = document.querySelector('#property-template');
 const propertyContainer = document.querySelector('.properties__grid');
@@ -23,6 +25,18 @@ const buttonRightSlider = document.querySelector('.popup__slide-btn_right');
 const popupReview = document.querySelector('#popup_review');
 const buttonLeaveReview = document.querySelector('.reviews__button');
 const buttonClosePopupReview = document.querySelector('#popup_review_close_btn');
+const buttonReviewSubmit = document.querySelector('.popup__submit-btn');
+const star1 = document.querySelector('.star1');
+const star2 = document.querySelector('.star2');
+const star3 = document.querySelector('.star3');
+const star4 = document.querySelector('.star4');
+const star5 = document.querySelector('.star5');
+
+const popupStar1 = document.querySelector('#star1');
+const popupStar2 = document.querySelector('#star2');
+const popupStar3 = document.querySelector('#star3');
+const popupStar4 = document.querySelector('#star4');
+const popupStar5 = document.querySelector('#star5');
 
 //универсальные функции открытия и закрытия попапов
 function openPopup (popup) {
@@ -35,6 +49,11 @@ function closePopup(popup) {
 
 //открытие и закрытие попапа для отзыва
 buttonLeaveReview.addEventListener('click', function () {
+star1.classList.add('review__star_inactive');
+star2.classList.add('review__star_inactive');
+star3.classList.add('review__star_inactive');
+star4.classList.add('review__star_inactive');
+star5.classList.add('review__star_inactive');
   openPopup(popupReview);
 });
 
@@ -129,8 +148,29 @@ const propertyCards = [
     owner: 'Савченко Дмитрий',
     number: '8-916-533-23-65'
   },
+
+  {
+    image: './images/IMAGE (6).png',
+    kitchen: './images/KITCHEN (3).jpeg',
+    bath: './images/BATH (6).jpeg',
+    title: 'Комфортные апартаменты в Зеленограде',
+    price: '7 300 000 ' + ' руб.',
+    address: 'Зеленоград, ул.Каштановая аллея, д.108',
+    bathCount: '1',
+    bedroomCount: '1',
+    space: '44' + ' кв.м',
+    text: 'Апартаменты в центре Зеленограда в новострое. Дом расположен в зеленом районе, поблизости главный городской парк. Свежий ремонт, вся необходимая бытовая техника, новая мебель. В доме имеется консьерж, домофон с видеокамерой.',
+    owner: 'Савченко Дмитрий',
+    number: '8-916-533-23-65'
+  },
 ];
 
+//создание экземпляра класса валидации 
+
+const validPopupForm = new FormValidator(object, '#popupForm'); 
+const validFooterForm = new FormValidator(object, '#footerForm'); 
+validPopupForm.enableValidation(); 
+validFooterForm.enableValidation(); 
 
 //создание разметки карточки для добавления из массива
 const createPropertyCard = (image, title, price, address, bathCount, bedroomCount, space, text, owner, number,kitchen,bath) => {
@@ -182,7 +222,9 @@ const renderPropertyCard = (image, title, price, address, bathCount, bedroomCoun
 };
 
 //перебор с функцией добавления карточек из массива на страницу
-propertyCards.forEach(function (property) {
+let sixCards = propertyCards.slice(0,6);
+
+sixCards.forEach(function (property) {
   renderPropertyCard(property.image, property.title, property.price, property.address, property.bathCount, property.bedroomCount, property.space, property.text, property.owner, property.number, property.kitchen, property.bath);
 });
 
@@ -217,6 +259,43 @@ const newReviewCardAvatar = newReviewCard.querySelector('.review__avatar');
 const newReviewCardName = newReviewCard.querySelector('.review__name');
 const newReviewCardAbout = newReviewCard.querySelector('.review__customer');
 
+//рендер звезд
+const newStar1 = newReviewCard.querySelector('.t-star1');
+const newStar2 = newReviewCard.querySelector('.t-star2');
+const newStar3 = newReviewCard.querySelector('.t-star3');
+const newStar4 = newReviewCard.querySelector('.t-star4');
+const newStar5 = newReviewCard.querySelector('.t-star5');
+
+if (popupStar1.classList.contains('review__star_inactive')) {
+  newStar1.classList.add('review__star_inactive')
+}else{
+  newStar1.classList.remove('review__star_inactive')
+}
+
+if (popupStar2.classList.contains('review__star_inactive')) {
+  newStar2.classList.add('review__star_inactive')
+}else{
+  newStar2.classList.remove('review__star_inactive')
+}
+
+if (popupStar3.classList.contains('review__star_inactive')) {
+  newStar3.classList.add('review__star_inactive')
+}else{
+  newStar3.classList.remove('review__star_inactive')
+}
+
+if (popupStar4.classList.contains('review__star_inactive')) {
+  newStar4.classList.add('review__star_inactive')
+}else{
+  newStar4.classList.remove('review__star_inactive')
+}
+
+if (popupStar5.classList.contains('review__star_inactive')) {
+  newStar5.classList.add('review__star_inactive')
+}else{
+  newStar5.classList.remove('review__star_inactive')
+}
+
 newReviewCardText.textContent = text;
 newReviewCardAvatar.src = avatar;
 newReviewCardAvatar.alt = 'аватар';
@@ -235,3 +314,59 @@ const renderReviewCard = (text, avatar, name, about) => {
 reviewCards.forEach(function (review) {
   renderReviewCard(review.text, review.avatar, review.name, review.about);
 });
+
+const reviewForm = document.querySelector('.popup__container_review');
+const nameInput = reviewForm.querySelector('#input_name');
+const textInput = reviewForm.querySelector('#input_text');
+const submit = reviewForm.querySelector('.popup__submit-btn');
+const customerCheckbox = reviewForm.querySelector('#radio_customer');
+
+//добавление карточки через написание отзыва
+const renderPopupReviewCard = (text, avatar, name, about) => {
+  reviewContainer.prepend(createReviewCard(text, avatar, name, about))
+};
+
+const handleClick = (evt) => {
+  evt.preventDefault();
+  let customer = '';
+  if (customerCheckbox.checked == true) {
+    customer = 'Заказчик';
+  }else{
+    customer = 'Собственник';
+  };
+let image = './images/anon.jpg';
+  renderPopupReviewCard(textInput.value, image, nameInput.value, customer);
+  textInput.value = '';
+  nameInput.value = '';
+  reviewContainer.lastElementChild.remove();
+  closePopup(popupReview);
+}
+
+buttonReviewSubmit.addEventListener('click', handleClick);
+
+const starsContainer = document.querySelector('.review__rating_popup');
+
+let stars = [
+  star1, star2, star3, star4, star5
+]
+
+starsContainer.addEventListener('click', (evt) => {
+  for (let i = 0; i <= stars.indexOf(evt.target); i++) {
+    stars[i].classList.remove('review__star_inactive')
+  };
+  starsContainer.removeEventListener('mouseout', turnStarActiveOff)
+})
+
+//функция добавления селектора неактивности
+const turnStarActiveOn = (evt) => {
+  for (let i = 0; i <= stars.indexOf(evt.target); i++) {
+    stars[i].classList.remove('review__star_inactive')}
+};
+
+const turnStarActiveOff = (evt) => {
+  for (let i = 0; i <= stars.indexOf(evt.target); i++) {
+    stars[i].classList.add('review__star_inactive')}
+};
+
+starsContainer.addEventListener('mouseover', turnStarActiveOn);
+starsContainer.addEventListener('mouseout', turnStarActiveOff)

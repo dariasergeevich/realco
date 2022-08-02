@@ -8,6 +8,12 @@
   <meta name="keywords" content="Realco, недвижимость, аренда недвижимости, покупка недвижимости">
   <meta name="author" content="Дарья Амелина">
   <link rel="stylesheet" href="./pages/index.css">
+  <!--Стили карусели-->
+  <!--<link rel="stylesheet" href="owl.carousel.css">
+  <link rel="stylesheet" href="owl.theme.default.scss"> -->
+<!--jQuery-->
+<!--<script src="https://yastatic.net/jquery/3.3.1/jquery.min.js"></script>
+<script src="owl.carousel.js"></script>-->
   <title>realco</title>
 </head>
 
@@ -129,9 +135,10 @@
       <div class="footer__subscribe">
         <p class="footer__subscribe-title">Подписаться</p>
         <p class="footer__subscribe-text">Подпишитесь на наши новости, чтобы быть в курсе свежих предложений</p>
-        <div class="footer__row">
-        <input class="footer__input" type="email" placeholder="Введите e-mail">
-        <button class="footer__button" type="submit">Подписаться</button>
+        <div class="footer__row form" method="post" id="footerForm" novalidate>
+        <input class="footer__input input" id="input-email" type="email" placeholder="Введите e-mail" minlength="2" maxlength="30" required>
+        <span class="input-email-error input-error"></span>
+        <button class="footer__button submit-btn" type="submit">Подписаться</button>
       </div>
          <p class="footer__confidence">Подписываясь на наши новости Вы соглашаетесь с <a class='footer__confidance-link' href="https://www.gnivc.ru/on_gnivts/information_disclosure/pdp/#:~:text=Политика%20конфиденциальности%20определяет%20основные%20цели,защите%20персональных%20данных%20Пользователей%20Сайта.">политикой конфиденциальности</a>.</p>
       <ul class="footer__social-media">
@@ -179,20 +186,21 @@
     </div>
 
     <div class="popup" id="popup_review">
-      <div class="popup__container popup__container_review">
+      <div class="popup__container popup__container_review form" id="popupForm" method="post" novalidate>
         <div class="popup__rating">
           <h3 class="popup__title popup__title_review">Оценка: </h3>
           <div class="review__rating review__rating_popup">
-            <div class="review__star"></div>
-            <div class="review__star"></div>
-            <div class="review__star"></div>
-            <div class="review__star"></div>
-            <div class="review__star"></div>
+            <div class="review__star star1" id="star1"></div>
+            <div class="review__star star2" id="star2"></div>
+            <div class="review__star star3" id="star3"></div>
+            <div class="review__star star4" id="star4"></div>
+            <div class="review__star star5" id="star5"></div>
           </div>
         </div>
         <div class="popup__row">
         <p class="popup__name">Имя: </p>
-        <input class="popup__input">
+        <input class="popup__input input" id="input_name" type="text" placeholder="Имя" minlength="2" maxlength="30" required>
+        <span class="input_name-error input-error"></span>
       </div>
       <div class="popup__row popup__row_radio">
       <input type="radio" id="radio_customer" name="radio" value="Заказчик">
@@ -201,8 +209,9 @@
       <label class='popup__radio' for="owner">Собственник</label>
       </div>
 <p class="popup__text popup__text_review">Напишите отзыв о нашем сервисе:</p>
-<textarea class="popup__textarea"></textarea>
-<button class="popup__submit-btn">Отправить</button>
+<textarea class="popup__textarea input" id="input_text" type="text" placeholder="Напишите отзыв" minlength="20" maxlength="300" required></textarea>
+<span class="input_text-error input-error"></span>
+<button class="popup__submit-btn submit-btn" type="submit">Отправить</button>
         <button class="popup__close-btn" id="popup_review_close_btn"></button>
     </div>
 
@@ -238,11 +247,11 @@
   <template id="review-template">
     <div class="review">
       <div class="review__rating">
-        <div class="review__star"></div>
-        <div class="review__star"></div>
-        <div class="review__star"></div>
-        <div class="review__star"></div>
-        <div class="review__star"></div>
+        <div class="review__star t-star1"></div>
+        <div class="review__star t-star2"></div>
+        <div class="review__star t-star3"></div>
+        <div class="review__star t-star4"></div>
+        <div class="review__star t-star5"></div>
       </div>
       <blockquote class="review__text"></blockquote>
       <div class="review__info">
@@ -254,8 +263,8 @@
       </div>
     </div>
   </template>
-  <script src="./scripts/index.js"></script>
-  <script src="./scripts/validate.js"></script>
+  <script src="./scripts/index.js" type="module"></script>
+  <script src="./scripts/stars.js" type="module"></script>
 </body>
 
 </html>

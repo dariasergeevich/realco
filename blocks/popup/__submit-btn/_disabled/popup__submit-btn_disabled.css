@@ -1,0 +1,5 @@
+.popup__submit-btn_disabled {
+    cursor:auto;
+    opacity: .7;
+    background-color: gray;
+}
