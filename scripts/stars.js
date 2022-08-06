@@ -9,24 +9,22 @@
     let stars = [
       star1, star2, star3, star4, star5
     ]
-    
-    starsContainer.addEventListener('click', (evt) => {
-      for (let i = 0; i <= stars.indexOf(evt.target); i++) {
-        stars[i].classList.remove('review__star_inactive')
-      };
-      starsContainer.removeEventListener('mouseout', turnStarActiveOff)
-    })
-    
+
     //функция добавления селектора неактивности
     const turnStarActiveOn = (evt) => {
       for (let i = 0; i <= stars.indexOf(evt.target); i++) {
-        stars[i].classList.remove('review__star_inactive')}
+        stars[i].classList.remove('review__star_inactive')};
     };
     
     const turnStarActiveOff = (evt) => {
       for (let i = 0; i <= stars.indexOf(evt.target); i++) {
         stars[i].classList.add('review__star_inactive')}
     };
+    
+    starsContainer.addEventListener('click', (evt) => {
+      turnStarActiveOn(evt);
+      starsContainer.removeEventListener('mouseout', turnStarActiveOff)
+    })
     
     starsContainer.addEventListener('mouseover', turnStarActiveOn);
     starsContainer.addEventListener('mouseout', turnStarActiveOff)

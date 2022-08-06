@@ -1,0 +1,29 @@
+.property_view-all {
+    display: flex;
+    flex-direction: row;
+    height: 200px;
+    width: 100%;
+    background-color: white;
+    cursor: pointer;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.15);
+    align-items: center;
+    justify-content: space-between;
+}
+
+@media (max-width: 1110px) {
+    .property_view-all {
+        flex-direction: column-reverse;
+        height: 450px;
+        align-items: flex-start;
+        padding-left: 20px;
+    }
+}
+
+@media (max-width: 450px) {
+    .property_view-all {
+        height: 520px;
+        width: 300px;
+        align-items: center;
+        padding-left: 0px;
+    }
+}

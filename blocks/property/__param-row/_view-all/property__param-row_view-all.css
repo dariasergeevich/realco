@@ -1,0 +1,15 @@
+
+.property__param-row_view-all {
+    display: flex;
+    flex-direction: row;
+    margin-left: 26px;
+    align-items: center;
+}
+
+
+@media (max-width:450px) {
+    .property__param-row_view-all {
+        margin-top: 10px;
+margin-left: 0px;
+    }
+}

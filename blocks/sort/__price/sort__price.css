@@ -1,0 +1,8 @@
+.sort__price {
+  margin-left: 12px;
+}
+
+@media(max-width: 450px) {
+  .sort__price {
+    margin-left: 0px;
+  }}

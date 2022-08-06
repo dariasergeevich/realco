@@ -1,0 +1,11 @@
+@media (max-width: 1190px) {
+    .property__column_view-all {
+      align-items: flex-start;
+    }
+}
+
+@media (max-width: 450px) {
+  .property__column_view-all {
+    align-items: center;
+  }
+}

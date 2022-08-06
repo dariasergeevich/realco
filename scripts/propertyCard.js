@@ -1,23 +1,23 @@
 
   export class PropertyCard {
     constructor (image, title, price, address, bathCount, bedroomCount, space, text, owner, number, templateSelector, handleCardClick) {
-      this.image = image;
-      this.title = title;
-      this.price = price;
-      this.address = address;
-      this.bathCount = bathCount;
-      this.bedroomCount = bedroomCount;
-      this.space = space;
-      this.text = text;
-      this.owner = owner;
-      this.number = number;
-      this.templateSelector = templateSelector;
-      this.handleCardClick = handleCardClick;
+      this._image = image;
+      this._title = title;
+      this._price = price;
+      this._address = address;
+      this._bathCount = bathCount;
+      this._bedroomCount = bedroomCount;
+      this._space = space;
+      this._text = text;
+      this._owner = owner;
+      this._number = number;
+      this._templateSelector = templateSelector;
+      this._handleCardClick = handleCardClick;
     }
 
     _getTemplate = () => {
         const newPropertyCard = document
-        .querySelector(this.templateSelector)
+        .querySelector(this._templateSelector)
         .content
         .querySelector('.property')
         .cloneNode('true');
@@ -30,7 +30,7 @@
 
 
       newPropertyCard.addEventListener('click', () => {
-        this.handleCardClick(this.image, this.title, this.price, this.address, this.text, this.owner, this.number)
+        this.handleCardClick(this._image, this._title, this._price, this._address, this._text, this._owner, this._number)
       });
 
 
@@ -47,14 +47,14 @@ const newPropertyCardBathCount = newPropertyCard.querySelector('#bath-count');
 const newPropertyCardBedroomCount = newPropertyCard.querySelector('#bedroom-count');
 const newPropertyCardSpace = newPropertyCard.querySelector('#space');
 
-newPropertyCardImage.src = this.image;
-newPropertyCardImage.alt = this.title;
-newPropertyCardTitle.textContent = this.title;
-newPropertyCardPrice.textContent = this.price;
-newPropertyCardAddress.textContent = this.address;
-newPropertyCardBathCount.textContent = this.bathCount;
-newPropertyCardBedroomCount.textContent = this.bedroomCount;
-newPropertyCardSpace.textContent = this.space;
+newPropertyCardImage.src = this._image;
+newPropertyCardImage.alt = this._title;
+newPropertyCardTitle.textContent = this._title;
+newPropertyCardPrice.textContent = this._price;
+newPropertyCardAddress.textContent = this._address;
+newPropertyCardBathCount.textContent = this._bathCount;
+newPropertyCardBedroomCount.textContent = this._bedroomCount;
+newPropertyCardSpace.textContent = this._space;
 
 return newPropertyCard;
     }

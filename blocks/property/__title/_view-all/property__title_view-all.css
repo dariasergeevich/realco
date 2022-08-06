@@ -1,0 +1,14 @@
+.property__title_view-all {
+font-weight: 700;
+font-size: 21px;
+line-height: 1.2;
+margin: 0;
+width: 300px;
+  }
+
+  @media (max-width: 450px) {
+    .property__title_view-all {
+      text-align: center;
+      margin-bottom: 10px;
+    }
+  }

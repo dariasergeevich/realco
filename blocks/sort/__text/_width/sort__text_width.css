@@ -1,0 +1,9 @@
+.sort__text_width {
+    margin-right: 0px;
+}
+
+@media(max-width:450px) {
+
+.sort__text_width {
+max-width: 80px;
+}}

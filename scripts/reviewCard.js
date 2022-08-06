@@ -21,15 +21,15 @@ export const reviewCards = [
 
   export class reviewCard {
     constructor (text, avatar, name, about, templateSelector) {
-      this.text = text;
-      this.avatar = avatar;
-      this.name = name;
-      this.about = about;
-      this.templateSelector = templateSelector;
+      this._text = text;
+      this._avatar = avatar;
+      this._name = name;
+      this._about = about;
+      this._templateSelector = templateSelector;
     }
     _getTemplate = () => {
         const newReviewCard = document
-        .querySelector(this.templateSelector)
+        .querySelector(this._templateSelector)
         .content
         .querySelector('.review')
         .cloneNode('true');
@@ -44,11 +44,11 @@ const newReviewCardAvatar = newReviewCard.querySelector('.review__avatar');
 const newReviewCardName = newReviewCard.querySelector('.review__name');
 const newReviewCardAbout = newReviewCard.querySelector('.review__customer');
 
-newReviewCardText.textContent = this.text;
-newReviewCardAvatar.src = this.avatar;
+newReviewCardText.textContent = this._text;
+newReviewCardAvatar.src = this._avatar;
 newReviewCardAvatar.alt = 'аватар';
-newReviewCardName.textContent = this.name;
-newReviewCardAbout.textContent = this.about;
+newReviewCardName.textContent = this._name;
+newReviewCardAbout.textContent = this._about;
 
 //рендер звезд
 const newStar1 = newReviewCard.querySelector('.t-star1');

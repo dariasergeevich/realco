@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Сервис Realco">
+  <meta name="keywords" content="Realco, недвижимость, аренда недвижимости, покупка недвижимости">
+  <meta name="author" content="Дарья Амелина">
+  <link rel="stylesheet" href="./pages/all_properties.css">
+  <title>Все варианты</title>
+</head>
+
+<body>
+  <div class="page">
+    <header class="header">
+      <div class="header__container header__container_view-all">
+        <div class="logo__row">
+          <div class="logo"></div>
+          <div class="logo__text"></div>
+        </div>
+    </div>
+    </header>
+    <main>
+      <section class="sort">
+        <p class="sort__title">Сортировать:</p>
+        <div class="sort__row">
+        <p class="sort__text">Город:</p>
+        <select class="sort__city" name="city">
+          <option class='option' id="all" value="Все города">Показать все</option>
+          <option class='option' id="blsh" value="Балашиха">Балашиха</option>
+          <option class='option' id="vrz" value="Воронеж">Воронеж</option>
+          <option class='option' id="ekb" value="Екатeринбург">Екатeринбург</option>
+          <option class='option' id="zl" value="Зеленоград">Зеленоград</option>
+          <option class='option' id="kaz" value="Казань">Казань</option>
+          <option class='option' id="krsk" value="Курск">Курск</option>
+          <option class='option' id="moscow" value="Москва">Москва</option>
+          <option class='option' id="nvs" value="Новосибирск">Новосибирск</option>
+          <option class='option' id="spb" value="Санкт-Петербург">Санкт-Петербург</option>
+          <option class='option' id="samara" value="Самара">Самара</option>
+          <option class='option' id="tol" value="Тольятти">Тольятти</option>
+        </select>
+      </div>
+      <div class="sort__row">
+        <p class="sort__text sort__text_no-margin">Цена:</p>
+        <div>
+        <input class="sort__price" type="radio" name="price" value="15 000 000">
+        <label class="sort__label" for="price">До 15 000 000 руб.</label>
+      </div>
+      <div>
+        <input class="sort__price" type="radio" name="price" value="20 000 000">
+        <label class="sort__label" for="price">До 20 000 000 руб.</label>
+      </div>
+      <div>
+        <input class="sort__price" type="radio" name="price" value="30 000 000">
+        <label class="sort__label" for="price">До 30 000 000 руб.</label>
+      </div>
+      <div>
+        <input class="sort__price" type="radio" name="price" value="30 000 000">
+        <label class="sort__label" for="price">Более 30 000 000 руб.</label>
+      </div>
+    </div>
+    <div class="sort__row">
+        <p class="sort__text sort__text_width">Количество комнат:</p>
+        <div class="sort__rooms">
+          <div>
+        <label class="sort__label" for="room">Студия</label>
+        <input class="sort__room"  type="checkbox" name="room" value="Студия">
+      </div>
+      <div>
+        <label class="sort__label" for="room">1</label>
+        <input class="sort__room" type="checkbox" name="room" value="1">
+      </div>
+      <div>
+        <label class="sort__label" for="room">2</label>
+        <input class="sort__room" type="checkbox" name="room" value="2">
+      </div>
+      <div>
+        <label class="sort__label" for="room">3</label>
+        <input class="sort__room" type="checkbox" name="room" value="3">
+      </div>
+      <div>
+        <label class="sort__label" for="room">4</label>
+        <input class="sort__room" type="checkbox" name="room" value="4">
+      </div>
+      </div>
+    </div>
+      </section>
+      <section class="properties">
+      </section>
+    </main>
+    <footer class="footer">
+      <div class="footer__grid">
+        <div class="logo__row logo__row_footer">
+          <div class="logo logo_footer"></div>
+          <div class="logo__text"></div>
+        </div>
+        <div class="footer__links">
+        <nav class="footer__link-list">
+          <a class='footer__link' href="#">Страницы</a>
+          <a class='footer__link' href="#">Домой</a>
+          <a class='footer__link' href="#">О нас</a>
+          <a class='footer__link' href="#">Блог</a>
+          <a class='footer__link' href="#">Агенты</a>
+          <a class='footer__link' href="#">Контакты</a>
+          <a class='footer__link' href="#">FAQ</a>
+          <a class='footer__link' href="#">недвижимость</a>
+        </nav>
+  
+        <nav class="footer__link-list">
+          <a class='footer__link' href="#">Страницы</a>
+          <a class='footer__link' href="#">О нас</a>
+          <a class='footer__link' href="#">Блог</a>
+          <a class='footer__link' href="#">Агенты</a>
+          <a class='footer__link' href="#">Контакты</a>
+        </nav>
+  
+        <nav class="footer__link-list">
+          <a class='footer__link' href="#">Страницы</a>
+          <a class='footer__link' href="#">Домой</a>
+          <a class='footer__link' href="#">О нас</a>
+          <a class='footer__link' href="#">Блог</a>
+          <a class='footer__link' href="#">Агенты</a>
+          <a class='footer__link' href="#">Контакты</a>
+          <a class='footer__link' href="#">FAQ</a>
+        </nav>
+      </div>
+        <div class="footer__subscribe">
+          <p class="footer__subscribe-title">Подписаться</p>
+          <p class="footer__subscribe-text">Подпишитесь на наши новости, чтобы быть в курсе свежих предложений</p>
+          <div class="footer__row form" method="post" id="footerForm" novalidate>
+          <input class="footer__input input" id="input-email" type="email" placeholder="Введите e-mail" minlength="2" maxlength="30" required>
+          <span class="input-email-error input-error"></span>
+          <button class="footer__button submit-btn" type="submit">Подписаться</button>
+        </div>
+           <p class="footer__confidence">Подписываясь на наши новости Вы соглашаетесь с <a class='footer__confidance-link' href="https://www.gnivc.ru/on_gnivts/information_disclosure/pdp/#:~:text=Политика%20конфиденциальности%20определяет%20основные%20цели,защите%20персональных%20данных%20Пользователей%20Сайта.">политикой конфиденциальности</a>.</p>
+        <ul class="footer__social-media">
+          <li><a href="#"><img class="footer__icon" src="./images/facebook.png"></a></li>
+          <li><a href="#"><img class="footer__icon" src="./images/insta.png"></a></li>
+          <li><a href="#"><img class="footer__icon" src="./images/twitter.png"></a></li>
+          <li><a href="#"><img class="footer__icon" src="./images/in.png"></a></li>
+        </ul>
+        </div>
+    </div>
+    </footer>
+    <div class="popup" id="popup_property">
+      <div class="popup__container">
+        <button class="popup__close-btn"></button>
+        <div class="popup__column">
+        <div class="popup__slider">
+          <button class="popup__slide-btn popup__slide-btn_left"></button>
+          <img class="popup__image" src="./images/IMAGE (1).png">
+          <button class="popup__slide-btn popup__slide-btn_right"></button>
+        </div>
+        <div class="property__param property__param_popup">
+          <div class="property__param-row property__param-row_popup">
+            <img class="property__param-icon" src="././images/bathtub.png" alt="ванная">
+            <p class="property__param-count" id="bath-count">1</p>
+          </div>
+          <div class="property__param-row property__param-row_popup">
+            <img class="property__param-icon" src="././images/bed.png" alt="спальня">
+            <p class="property__param-count" id="bedroom-count">1</p>
+          </div>
+          <div class="property__param-row property__param-row_popup">
+            <img class="property__param-icon" src="././images/square_foot.png" alt="площадь">
+            <p class="property__param-count" id="space">40 кв.м</p>
+          </div>
+        </div>
+      </div>
+<div class="popup__column popup__column_info">
+<h3 class="popup__title"></h3>
+<p class="popup__price"></p>
+<p class="popup__location"></p>
+<p class="popup__text" id="popup_text"></p>
+<p class="popup__text" id="popup_owner"></p>
+<p class="popup__text" id="popup_number"></p>
+</div>
+      </div>
+    </div>
+
+  <template id="property-template">
+    <div class="property_view-all">
+      <img class="property__image_view-all">
+        <div class="property__column property__column_view-all">
+        <p class="property__text" id="popup_text"></p>
+        <div class="property__param property__param_view-all">
+          <div class="property__param-row_view-all">
+            <div class="property__location-flex property__location-flex_view-all">
+              <div class="property__location-img"></div>
+              <p class="property__location"></p>
+            </div>
+          </div>
+          <div class="property__param-row_view-all">
+          <img class="property__param-icon" src="././images/bathtub.png" alt="ванная">
+            <p class="property__param-count" id="bath-count"></p>
+          <div class="property__param-row">
+            <img class="property__param-icon" src="././images/bed.png" alt="спальня">
+            <p class="property__param-count" id="bedroom-count"></p>
+          </div>
+          <div class="property__param-row">
+            <img class="property__param-icon" src="././images/square_foot.png" alt="площадь">
+            <p class="property__param-count" id="space"></p>
+          </div>
+        </div>
+        </div>
+    </div>
+
+    <div class="property__column property__column_info property__column_view-all">
+      <h3 class="property__title_view-all"></h3>
+      <p class="property__price_view-all"></p>
+      <p class="property__location_view-all"></p>
+      <p class="property__text_info" id="popup_owner"></p>
+      <p class="property__text_info" id="popup_number"></p>
+      </div>
+
+  </div>
+  </template>
+  <script src="./scripts/viewAll.js" type="module"></script>
+</body>
+
+</html>

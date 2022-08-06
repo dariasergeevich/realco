@@ -1,0 +1,5 @@
+
+@media(max-width:450px) {
+.property__param_view-all {
+    flex-direction: column;
+}}
