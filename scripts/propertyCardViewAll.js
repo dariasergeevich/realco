@@ -119,6 +119,45 @@ const filterCity = () => {
 selectCity.addEventListener('change', filterCity);
 
 
+const priceBefore15 = document.querySelector('#before15');
+const priceBefore20 = document.querySelector('#before20');
+const priceBefore30 = document.querySelector('#before30');
+const priceAfter30 = document.querySelector('#after30');
+
+
+
+const priceStr = newPropertyCardPrice.textContent.substr(0, (newPropertyCardPrice.textContent.length - 5));
+const priceNum = +priceStr.replace(/\s/g, ''); //хз как, но пробелы удаляются (для приведения строки к числу)
+
+
+const filterPrice = () => {
+  if (priceBefore15.checked == true && priceNum > 15000000) {
+    newPropertyCard.classList.add('property_view-all_hidden')
+  }
+
+ if (priceBefore20.checked == true && priceNum > 20000000) {
+    newPropertyCard.classList.add('property_view-all_hidden')
+  }else if(priceBefore20.checked == true && priceNum > 15000000){
+    newPropertyCard.classList.remove('property_view-all_hidden')
+  }
+
+  if (priceBefore30.checked == true && priceNum > 30000000) {
+    newPropertyCard.classList.add('property_view-all_hidden')
+  }else if(priceBefore30.checked == true && priceNum > 20000000){
+    newPropertyCard.classList.remove('property_view-all_hidden')
+  }
+
+  if (priceAfter30.checked == true && priceNum < 30000000) {
+    newPropertyCard.classList.add('property_view-all_hidden')
+  }else if(priceAfter30.checked == true && priceNum > 20000000){
+    newPropertyCard.classList.remove('property_view-all_hidden')
+  }
+} 
+
+priceBefore15.addEventListener('change', filterPrice)
+priceBefore20.addEventListener('change', filterPrice)
+priceBefore30.addEventListener('change', filterPrice)
+priceAfter30.addEventListener('change', filterPrice)
 
 return newPropertyCard;
     }

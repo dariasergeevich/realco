@@ -21,6 +21,10 @@ const nameInput = reviewForm.querySelector('#input_name');
 const textInput = reviewForm.querySelector('#input_text');
 const customerCheckbox = reviewForm.querySelector('#radio_customer');
 
+//конставнты для отправки email
+const footerButton = document.querySelector('.footer__button');
+const submitSuccess = document.querySelector('.input-email-success');
+
 //универсальные функции открытия и закрытия попапов
 function openPopup (popup) {
   popup.classList.add('popup_opend');
@@ -29,6 +33,11 @@ function openPopup (popup) {
 function closePopup(popup) {
   popup.classList.remove('popup_opend');
 };
+
+footerButton.addEventListener('click', function() {
+  submitSuccess.classList.add('input-email-success_active');
+
+})
 
 //открытие и закрытие попапа для отзыва
 buttonLeaveReview.addEventListener('click', function () {
@@ -50,6 +59,8 @@ const validPopupForm = new FormValidator(object, '#popupForm');
 const validFooterForm = new FormValidator(object, '#footerForm'); 
 validPopupForm.enableValidation(); 
 validFooterForm.enableValidation(); 
+
+
 
 //закрытие попапа с увеличенной картинкой
 buttonClosePopup.addEventListener('click', function () {

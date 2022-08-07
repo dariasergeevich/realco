@@ -32,7 +32,7 @@ export const propertyCards = [
       kitchen: './images/KITCHEN (3).jpeg',
       bath: './images/BATH (3).jpeg',
       title: 'Однокомнатная квартира в Санкт-Петербурге',
-      price: '15 200 000.' + ' руб.',
+      price: '15 200 000' + ' руб.',
       address: 'Санкт-Петербург, ул.Садовая, д.3',
       bathCount: '1',
       bedroomCount: '1',

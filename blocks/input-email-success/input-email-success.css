@@ -1,0 +1,20 @@
+.input-email-success {
+ color: white;
+ font-size: 12px;
+ line-height: 15px;
+max-width: 358px;
+position: absolute;
+width: 246px;
+top: 55px
+  }
+
+   @media (max-width: 1024px) {
+    .input-email-success  {
+      width: 80%;
+  }}
+
+  @media (max-width: 425px) {
+    .input-email-success  {
+      font-size: 10px;
+ line-height: 12px;
+  }}
