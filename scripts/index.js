@@ -3,7 +3,9 @@ import {propertyCards} from './propertyCardsArray.js'; //массив с дан�
 import {reviewCards, reviewCard} from './reviewCard.js';
 import { renderStars } from './stars.js';
 import { PropertyCard} from './propertyCard.js';
+import {carousel} from './Carousel.js';
 
+carousel();
 //констранты для карточек с недвижимостью
 const cardPropertyTemplate = document.querySelector('#property-template');
 const propertyContainer = document.querySelector('.properties__grid');
@@ -67,15 +69,15 @@ buttonClosePopup.addEventListener('click', function () {
   closePopup(popupProperty);
 });
 
-function createPropertyCard(image, title, price, address, bathCount, bedroomCount, space, text, owner, number) {
-  const card = new PropertyCard(image, title, price, address, bathCount, bedroomCount, space, text, owner, number, '#property-template', handleCardClick);
+function createPropertyCard(image, title, price, address, bathCount, bedroomCount, space, text, owner, number, bath, kitchen,) {
+  const card = new PropertyCard(image, title, price, address, bathCount, bedroomCount, space, text, owner, number, '#property-template', handleCardClick, bath, kitchen);
   const cardElement = card.createPropertyCard();
   return cardElement
 }
 
 //добавление карточки на страницу
-const renderPropertyCard = (image, title, price, address, bathCount, bedroomCount, space, text, owner, number,kitchen, bath) => {
-  propertyContainer.append(createPropertyCard(image, title, price, address, bathCount, bedroomCount, space, text, owner, number,kitchen,bath))
+const renderPropertyCard = (image, title, price, address, bathCount, bedroomCount, space, text, owner, number, bath, kitchen) => {
+  propertyContainer.append(createPropertyCard(image, title, price, address, bathCount, bedroomCount, space, text, owner, number, bath, kitchen))
 };
 
 //ограничение: только 6 карточек на странице
@@ -83,23 +85,39 @@ let sixCards = propertyCards.slice(0,6);
 
 //перебор с функцией добавления карточек из массива на страницу
 sixCards.forEach(function (property) {
-  renderPropertyCard(property.image, property.title, property.price, property.address, property.bathCount, property.bedroomCount, property.space, property.text, property.owner, property.number, property.kitchen, property.bath);
+  renderPropertyCard(property.image, property.title, property.price, property.address, property.bathCount, property.bedroomCount, property.space, property.text, property.owner, property.number, property.bath, property.kitchen);
 });
 
-function handleCardClick(image, title, price, address, text, owner, number) {
+function handleCardClick(image, bath, kitchen, title, price, address, text, owner, number, bathCount, bedroomCount, space) {
 
   const popupProperty = document.querySelector('#popup_property');
-  const popupPropertyImage = popupProperty.querySelector('.popup__image');
+  const popupPropertyRoomImage = popupProperty.querySelector('.popup__room');
+  const popupPropertyBathImage = popupProperty.querySelector('.popup__bath');
+  const popupPropertyKitchenImage = popupProperty.querySelector('.popup__kitchen');
 const popupPropertyTitle = popupProperty.querySelector('.popup__title');
 const popupPropertyPrice = popupProperty.querySelector('.popup__price');
 const popupPropertyLocation = popupProperty.querySelector('.popup__location');
 const popupPropertyText = popupProperty.querySelector('#popup_text');
 const popupPropertyOwner = popupProperty.querySelector('#popup_owner');
 const popupPropertyNumber = popupProperty.querySelector('#popup_number');
+const popupBathCount = popupProperty.querySelector('#bath-count');
+const popupBadroomCount = popupProperty.querySelector('#bedroom-count');
+const popupSpace = popupProperty.querySelector('#space');
+
+popupBathCount.textContent = bathCount;
+popupBadroomCount.textContent = bedroomCount;
+popupSpace.textContent = space;
+
+popupPropertyRoomImage.setAttribute('src', image);
+popupPropertyRoomImage.setAttribute('alt', title);
+
+popupPropertyBathImage.setAttribute('src', bath);
+popupPropertyBathImage.setAttribute('alt', title);
+
+popupPropertyKitchenImage.setAttribute('src', kitchen);
+popupPropertyKitchenImage.setAttribute('alt', title);
 
 
-  popupPropertyImage.setAttribute('src', image);
-  popupPropertyImage.setAttribute('alt', title);
   popupPropertyTitle.textContent = title;
   popupPropertyPrice.textContent = price;
   popupPropertyLocation.textContent = address;

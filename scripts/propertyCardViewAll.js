@@ -97,6 +97,13 @@ const filterCity = () => {
     newPropertyCard.classList.remove('property_view-all_hidden');
   }
 
+  if (selectCity.value == 'Москва' && !newPropertyCardAddress.textContent.includes('Москва')) {
+    newPropertyCard.classList.add('property_view-all_hidden');
+  }
+  if (selectCity.value == 'Москва' && newPropertyCardAddress.textContent.includes('Москва')) {
+    newPropertyCard.classList.remove('property_view-all_hidden');
+  }
+
   if (selectCity.value == 'Новосибирск' && !newPropertyCardAddress.textContent.includes('Новосибирск')) {
     newPropertyCard.classList.add('property_view-all_hidden');
   }
@@ -118,7 +125,7 @@ const filterCity = () => {
 
 selectCity.addEventListener('change', filterCity);
 
-
+//фильтрация карточек по цене
 const priceBefore15 = document.querySelector('#before15');
 const priceBefore20 = document.querySelector('#before20');
 const priceBefore30 = document.querySelector('#before30');
@@ -158,6 +165,51 @@ priceBefore15.addEventListener('change', filterPrice)
 priceBefore20.addEventListener('change', filterPrice)
 priceBefore30.addEventListener('change', filterPrice)
 priceAfter30.addEventListener('change', filterPrice)
+
+//фильтрация карточек по количеству комнат
+const studio = document.querySelector('#studio');
+const room1 = document.querySelector('#room1');
+const room2 = document.querySelector('#room2');
+const room3 = document.querySelector('#room3');
+const room4 = document.querySelector('#room4');
+
+
+const filterRoom = () => {
+  if(studio.checked && (!newPropertyCardTitle.textContent.includes('студия') && !newPropertyCardTitle.textContent.includes('Студия'))) {
+    newPropertyCard.classList.add('property_view-all_hidden')
+  }else if(!studio.checked && !newPropertyCardTitle.textContent.includes('студия') && !newPropertyCardTitle.textContent.includes('Студия')){
+    newPropertyCard.classList.remove('property_view-all_hidden')
+  }
+
+  if(room1.checked && !newPropertyCardBedroomCount.textContent.includes('1') /*&& newPropertyCardTitle.textContent.includes('студия') && newPropertyCardTitle.textContent.includes('Студия')*/) {
+    newPropertyCard.classList.add('property_view-all_hidden')
+  }else if(!room1.checked && newPropertyCardBedroomCount.textContent.includes('1') /*&& !newPropertyCardTitle.textContent.includes('студия') && !newPropertyCardTitle.textContent.includes('Студия')*/){
+    newPropertyCard.classList.remove('property_view-all_hidden')
+  }
+
+  if(room2.checked && !newPropertyCardBedroomCount.textContent.includes('2')) {
+    newPropertyCard.classList.add('property_view-all_hidden')
+  }else if(!room2.checked && newPropertyCardBedroomCount.textContent.includes('2')){
+    newPropertyCard.classList.remove('property_view-all_hidden')
+  }
+
+  if(room3.checked && !newPropertyCardBedroomCount.textContent.includes('3')) {
+    newPropertyCard.classList.add('property_view-all_hidden')
+  }else if(!room3.checked && newPropertyCardBedroomCount.textContent.includes('3')){
+    newPropertyCard.classList.remove('property_view-all_hidden')
+  }
+
+  if(room4.checked && !newPropertyCardBedroomCount.textContent.includes('4')) {
+    newPropertyCard.classList.add('property_view-all_hidden')
+  }else if(!room4.checked && newPropertyCardBedroomCount.textContent.includes('4')){
+    newPropertyCard.classList.remove('property_view-all_hidden')
+  }
+}
+studio.addEventListener('change', filterRoom);
+room1.addEventListener('change', filterRoom);
+room2.addEventListener('change', filterRoom);
+room3.addEventListener('change', filterRoom);
+room4.addEventListener('change', filterRoom);
 
 return newPropertyCard;
     }

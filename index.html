@@ -148,24 +148,53 @@
     <div class="popup" id="popup_property">
       <div class="popup__container">
         <button class="popup__close-btn"></button>
-        <div class="popup__column">
-        <div class="popup__slider">
+        
+
+
+        <!--<div class="popup__slider">
           <button class="popup__slide-btn popup__slide-btn_left"></button>
           <img class="popup__image" src="./images/IMAGE (1).png">
           <button class="popup__slide-btn popup__slide-btn_right"></button>
-        </div>
+        </div>-->
+
+
+
+
+        <div class="wrap">
+          <div class="b-carousel js-carousel">
+            <button class="b-carousel__prev js-carousel__prev"></button>
+            <div class="b-carousel__wrap js-carousel__wrap">
+              <div class="b-carousel__item">
+                <img class="popup__image popup__room">
+              </div>
+              <div class="b-carousel__item">
+                <img class="popup__image popup__bath">
+              </div>
+              <div class="b-carousel__item">
+                <img class="popup__image popup__kitchen">
+              </div>
+            </div>
+            <button class="b-carousel__next js-carousel__next"></button>
+          </div>
+
+
+
+
+
+
+
         <div class="property__param property__param_popup">
           <div class="property__param-row property__param-row_popup">
             <img class="property__param-icon" src="././images/bathtub.png" alt="ванная">
-            <p class="property__param-count" id="bath-count">1</p>
+            <p class="property__param-count" id="bath-count"></p>
           </div>
           <div class="property__param-row property__param-row_popup">
             <img class="property__param-icon" src="././images/bed.png" alt="спальня">
-            <p class="property__param-count" id="bedroom-count">1</p>
+            <p class="property__param-count" id="bedroom-count"></p>
           </div>
           <div class="property__param-row property__param-row_popup">
             <img class="property__param-icon" src="././images/square_foot.png" alt="площадь">
-            <p class="property__param-count" id="space">40 кв.м</p>
+            <p class="property__param-count" id="space"></p>
           </div>
         </div>
       </div>
@@ -177,7 +206,7 @@
 <p class="popup__text" id="popup_owner"></p>
 <p class="popup__text" id="popup_number"></p>
 </div>
-      </div>
+      
     </div>
 
     <div class="popup" id="popup_review">

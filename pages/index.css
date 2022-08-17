@@ -122,3 +122,5 @@
 @import url(../blocks/input-error/_text-error/input_text-error.css);
 @import url(../blocks/input-email-success/input-email-success.css);
 @import url(../blocks/input-email-success/_active/input-email-success_active.css);
+
+@import url(../blocks/carousel.css);
